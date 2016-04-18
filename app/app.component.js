@@ -46,6 +46,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                     this.quoteText = '';
                     this.videoLink = '';
                     this.videoTitle = '';
+                    this.helloKitty = 'app/img/hellokitty.jpg';
                     this.logoImage = "app/img/moticatlogo.png";
                     this.valueChange = new core_2.EventEmitter();
                 }
@@ -58,6 +59,7 @@ System.register(['angular2/platform/browser', 'angular2/core', 'angular2/router'
                         localStorage.setItem('profile', JSON.stringify(profile));
                         localStorage.setItem('id_token', id_token);
                         _this.profile = JSON.parse(localStorage['profile']);
+                        location.reload();
                         _this.newCombo();
                     });
                 };

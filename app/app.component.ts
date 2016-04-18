@@ -28,6 +28,8 @@ export class AppComponent implements OnInit{
   public videoLink: string = '';
   public videoTitle: string = '';
 
+  public helloKitty: string = 'app/img/hellokitty.jpg';
+
   public logoImage = "app/img/moticatlogo.png";
 	public profile;
 
@@ -46,6 +48,7 @@ export class AppComponent implements OnInit{
       localStorage.setItem('id_token', id_token);
 
 	this.profile = JSON.parse(localStorage['profile']);
+	location.reload();
 	this.newCombo();
     });
   }

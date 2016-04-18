@@ -64,9 +64,15 @@
 		<!--iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2Fprivate-route&layout=button_count&mobile_iframe=true&width=87&height=20&appId" 
 		 width="87" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
 		</iframe-->
-		<div [attr.data-href]="getVideoLink()" class="fb-share-button" data-layout="button_count" data-mobile-iframe="true">
+		<div [attr.data-href]="getVideoLink()" data-href='https://www.google.com' class="fb-share-button" data-layout="button_count" data-mobile-iframe="true">
 		</div>
 		<button class="btn btn-md btn-primary" *ngIf="loggedIn()" (click)="AnotherOne()">Another One</button>
 	</div>
 
+</div>
+
+<div *ngIf="!loggedIn()" style="margin-top: 30px; max-height: 800px;">
+	<div style="width: 300px; margin: 0 auto; margin-top: 250px;">
+		<img style="width: 300px;" [src]='helloKitty'/>
+	</div>
 </div>
