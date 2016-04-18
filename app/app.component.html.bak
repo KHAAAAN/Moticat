@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+		</div>	
+
+		 <div style="border:0;" class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li style="cursor: pointer;" (click)="login()" *ngIf="!loggedIn()">
+					<a>Login</a>
+				</li>
+
+				<li style="cursor: pointer;" (click)="logout()" *ngIf="loggedIn()">
+					<a>Logout</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+</nav>
+
+<img [src]="logoImage" alt="Description" />
+<br>
+
+<!--<hr>
+<div>
+  <button [routerLink]="['./PublicRoute']">Public Route</button>
+  <button *ngIf="loggedIn()" [routerLink]="['./PrivateRoute']">Private Route</button>
+  <router-outlet></router-outlet>
+</div>
+<hr>-->
+
+<div>
+	<button class="btn btn-md btn-primary" *ngIf="loggedIn()" (click)="AnotherOne()">Another One</button>
+<!--div *ngIf="!loggedIn()">
+  <h2>Click Login so you can get moticated, scrub.</h2>
+
+</div-->
+
+	<h2>{{videoTitle}}<h2>
+	<iframe width="640" height="360" [src]="videoLink" frameborder="0" allowfullscreen></iframe>
+	<p>{{quoteText}}</p>
+	<p>{{quoteAuthor}}</p>
+
+	<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2Fprivate-route&layout=button_count&mobile_iframe=true&width=87&height=20&appId" 
+	 width="87" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
+	</iframe>
+</div>

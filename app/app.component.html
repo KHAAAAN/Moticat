@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+			<ul class="nav navbar-nav">
+				<li>
+					<img id="logo" [src]="logoImage" alt="Description" />
+				</li>
+			</ul>
+		</div>	
+
+		 <div style="border:0;" class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+
+				<li *ngIf="loggedIn()" style="margin-top: 8px;">
+					<a style="padding: 0px; cursor: default;" id="login">
+					<!--span class="glyphicon glyphicon-knight">
+					</span-->
+					<img [src]="profile.picture" style="width: 35px;"/>
+					I am {{profile.name}}
+					</a>	
+				</li>
+
+				<li style="cursor: pointer;" (click)="login()" *ngIf="!loggedIn()">
+					<a>
+					<span class="glyphicon glyphicon-log-in">
+					</span>
+					Login
+					</a>	
+				</li>
+
+				<li style="background: rgb(255, 204, 0); cursor: pointer; margin-left:15px;" (click)="logout()" *ngIf="loggedIn()">
+					<a>
+					<span class="glyphicon glyphicon-log-out">
+					</span>
+					Log out
+					</a>	
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+</nav>
+
+
+<div *ngIf="loggedIn()" style="margin-top: 30px; max-height: 800px;">
+	<h2 id="video-title" >{{videoTitle}}</h2>
+	<iframe id="quote-frame" 
+		 style="display: block; margin-top: 30px; height: 60%; width: 40%; margin-left: 50px; margin: 0 auto;" 
+		[src]="videoLink" frameborder="0" allowfullscreen></iframe>
+
+	<div id="quote">
+		<p>{{quoteText}}</p>
+		<p>~{{quoteAuthor}}</p>
+	</div>
+
+	<div id="last">
+		<!--iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2Fprivate-route&layout=button_count&mobile_iframe=true&width=87&height=20&appId" 
+		 width="87" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
+		</iframe-->
+		<div [attr.data-href]="getVideoLink()" class="fb-share-button" data-layout="button_count" data-mobile-iframe="true">
+		</div>
+		<button class="btn btn-md btn-primary" *ngIf="loggedIn()" (click)="AnotherOne()">Another One</button>
+	</div>
+
+</div>

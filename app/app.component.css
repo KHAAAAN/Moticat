@@ -1,0 +1,55 @@
+.navbar{
+	background-color: rgba(0, 0, 0, 0.78);
+	border: 0;
+	border-radius: 0;
+}
+
+ul.navbar-nav li a{
+	color: white;
+}
+
+/*not working TODO: fix*/
+ul.navbar-nav li a:hover{
+	color: #6DB3F2;
+}
+
+#logo{
+	width: 50%;
+    margin-top: 5px;
+}
+
+#video-title{
+	/*display: inline;*/
+    /*background: #B20024;*/
+	background: #333333;
+    color: white;
+    padding: 10;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.39);
+    border-radius: 5px;
+	letter-spacing: 2px;
+	width: 30%;
+    padding-left: 1%;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+
+#quote{
+	margin: 30px;
+	margin-bottom: 0;
+}
+
+#quote p{
+	font-style: italic;	
+	font-size: 24px;
+	text-align: center;
+}
+
+#last{
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#last button{
+	margin-left: 10px;
+}
